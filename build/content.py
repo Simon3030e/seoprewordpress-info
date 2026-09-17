@@ -71,7 +71,7 @@ FAQ = {
     "sk": {
         "common": [
             ("Koľko stojí SEO pre WordPress web?",
-             "Za prácu platíte 12 EUR za hodinu. Malý WordPress web zvládnem za 10 hodín mesačne (120 EUR), väčší web s blogom za 20 až 30 hodín. Presný rozsah vám potvrdím v pláne po bezplatnom audite."),
+             "Za prácu platíte 12 EUR za hodinu. Start balíček 10 hodín mesačne (120 EUR), Štandard 12 hodín (144 EUR), Pro 15 hodín (180 EUR). Presný rozsah vám potvrdím v pláne po bezplatnom audite."),
             ("Je WordPress dobrý pre SEO?",
              "Áno. WordPress sám o sebe nie je prekážkou, ale šablóna, pluginy a rýchlosť často brzdia. Riešim presne to: aby web posielal Google správne signály a rýchlo sa načítal."),
             ("Ktorý WordPress SEO plugin potrebujem?",
@@ -91,7 +91,7 @@ FAQ = {
             ("Prečo hodinová cena a nie paušál?",
              "Lebo viete presne, za čo platíte. Každá hodina je vykázaná v mesačnom reporte. Balíčky sú len odporúčané rozsahy, kedykoľvek ich môžete meniť."),
             ("Koľko hodín potrebuje WordPress web mesačne?",
-             "Malý web 10 hodín (120 EUR), web s blogom 15 až 20 hodín, e-commerce na WooCommerce 30 až 40 hodín. Spresní to plán po audite."),
+             "Start 10 hodín (120 EUR), Štandard 12 hodín (144 EUR), Pro 15 hodín (180 EUR). Spresní to plán po audite."),
         ],
         "proces": [
             ("Do akého WordPressu sa pripojím?",
@@ -103,7 +103,7 @@ FAQ = {
     "cz": {
         "common": [
             ("Kolik stojí SEO pro WordPress web?",
-             "Za práci platíte 12 EUR za hodinu. Malý WordPress web zvládnu za 10 hodin měsíčně (120 EUR), větší web s blogem za 20 až 30 hodin. Přesný rozsah potvrdím v plánu po bezplatném auditu."),
+             "Za práci platíte 12 EUR za hodinu. Start balíček 10 hodin měsíčně (120 EUR), Standard 12 hodin (144 EUR), Pro 15 hodin (180 EUR). Přesný rozsah potvrdím v plánu po bezplatném auditu."),
             ("Je WordPress dobrý pro SEO?",
              "Ano. WordPress sám o sobě není překážkou, ale šablona, pluginy a rychlost často brzdí. Řeším přesně to: aby web posílal Google správné signály a rychle se načítal."),
             ("Který WordPress SEO plugin potřebuji?",
@@ -123,7 +123,7 @@ FAQ = {
             ("Proč hodinová cena a ne paušál?",
              "Protože víte přesně, za co platíte. Každá hodina je vykázaná v měsíčním reportu. Balíčky jsou jen doporučené rozsahy, kdykoliv je můžete měnit."),
             ("Kolik hodin potřebuje WordPress web měsíčně?",
-             "Malý web 10 hodin (120 EUR), web s blogem 15 až 20 hodin, e-commerce na WooCommerce 30 až 40 hodin. Spřesní to plán po auditu."),
+             "Start 10 hodin (120 EUR), Standard 12 hodin (144 EUR), Pro 15 hodin (180 EUR). Spřesní to plán po auditu."),
         ],
         "proces": [
             ("Do jakého WordPressu se připojím?",
@@ -279,7 +279,7 @@ BLOG_POSTS = {
 # ---------------------------------------------------------------- blog articles
 # BLOG_ARTICLES[slug][market] = full post content. Answer-first structure per
 # the noktostudio blog format: Stručná odpoveď, sections, FAQ, related posts.
-# Pricing: 12 EUR/hod, monthly retainers 120-480 EUR.
+# Pricing: 12 EUR/hod, monthly retainers 120-180 EUR.
 
 BLOG_ARTICLES = {
     "seo-wordpress-navod": {
@@ -311,10 +311,10 @@ BLOG_ARTICLES = {
 <p>Blog na WordPress je najrýchlejšia cesta k zákazníkom z Google. Napíšte články na otázky, ktoré si zákazníci kladú pred nákupom: "ako si vybrať...", "koľko stojí...", "najlepší X pre Y". Každý článok: jedno cieľové kľúčové slovo, H2 nadpisy, interný odkaz na službu, 800 až 1500 slov. Dopyty a objemy overíte cez Marketing Miner (SK/CZ dáta) alebo Google autocomplete.</p>
 
 <h2>Krok 4: Meranie a udržiavanie</h2>
-<p>Mesačne skontrolujte: pozície a kliky (Search Console), rýchlosť (PageSpeed), nové obsahy. Staré články po roku obnovte, Google ich rád re-indexuje. Ak nechcete robiť SEO sami, robím to za vás: 12 EUR za hodinu, retainer od 120 EUR mesačne pre malý web, 240 až 480 EUR pre web s blogom a e-commerce. Všetko vykázané v mesačnom reporte.</p>
+<p>Mesačne skontrolujte: pozície a kliky (Search Console), rýchlosť (PageSpeed), nové obsahy. Staré články po roku obnovte, Google ich rád re-indexuje. Ak nechcete robiť SEO sami, robím to za vás: 12 EUR za hodinu, retainer od 120 EUR mesačne pre malý web, 120 až 180 EUR pre web s blogom a e-commerce. Všetko vykázané v mesačnom reporte.</p>
 
 <h2>Koľko to stojí v praxi</h2>
-<p>Malý web (10 strán): 10 hodín mesačne = 120 EUR. Web s blogom (2 články mesačne + technika): 15 až 20 hodín = 180 až 240 EUR. WooCommerce e-shop: 30 až 40 hodín = 360 až 480 EUR. Prvá hodina je bezplatný hovor a audit, aby ste videli, čo by SEO u vás znamenalo.</p>
+<p>Start (10 strán): 10 hodín mesačne = 120 EUR. Štandard (1 až 2 články mesačne + technika): 12 hodín = 144 EUR. Pro (viac obsahu + WooCommerce): 15 hodín = 180 EUR. Prvá hodina je bezplatný hovor a audit, aby ste videli, čo by SEO u vás znamenalo.</p>
 """,
             "faq": [
                 ("Potrebujem na SEO WordPress platiť pluginy?", "Nie. Bezplatný Yoast alebo Rank Math pokrýva meta údaje a sitemap. Platene pluginy (WP Rocket na cache) pomáhajú pri rýchlosti, ale nie sú podmienkou."),
@@ -353,10 +353,10 @@ BLOG_ARTICLES = {
 <p>Blog na WordPress je nejrychlejší cesta k zákazníkům z Google. Pište články na otázky, které si zákazníci kladou před nákupem: "jak vybrat...", "kolik stojí...", "nejlepší X pro Y". Každý článek: jedno cílové klíčové slovo, H2 nadpisy, interní odkaz na službu, 800 až 1500 slov. Dotazy a objemy ověříte přes Marketing Miner (CZ/SK data) nebo zdarma přes autocomplete.</p>
 
 <h2>Krok 4: Měření a udržování</h2>
-<p>Měsíčně zkontrolujte: pozice a kliky (Search Console), rychlost (PageSpeed), staré články po roce obnovte. Když nechcete SEO dělat sami, udělám to za vás: 12 EUR za hodinu, retainer od 120 EUR měsíčně pro malý web, 240 až 480 EUR pro web s blogem a e-commerce. Vše vykázané v měsíčním reportu.</p>
+<p>Měsíčně zkontrolujte: pozice a kliky (Search Console), rychlost (PageSpeed), staré články po roce obnovte. Když nechcete SEO dělat sami, udělám to za vás: 12 EUR za hodinu, retainer od 120 EUR měsíčně pro malý web, 120 až 180 EUR pro web s blogem a e-commerce. Vše vykázané v měsíčním reportu.</p>
 
 <h2>Kolik to stojí v praxi</h2>
-<p>Malý web (10 stránek): 10 hodin měsíčně = 120 EUR. Web s blogem (2 články měsíčně + technika): 15 až 20 hodin = 180 až 240 EUR. WooCommerce e-shop: 30 až 40 hodin = 360 až 480 EUR. První hodina je bezplatný hovor a audit, abyste viděli, co by SEO u vás znamenalo.</p>
+<p>Start (10 stránek): 10 hodin měsíčně = 120 EUR. Standard (1 až 2 články + technika): 12 hodin = 144 EUR. Pro (více obsahu + WooCommerce): 15 hodin = 180 EUR. První hodina je bezplatný hovor a audit, abyste viděli, co by SEO u vás znamenalo.</p>
 """,
             "faq": [
                 ("Potřebuji platit pluginy?", "Ne. Bezplatný Yoast nebo Rank Math pokrývá meta údaje a sitemap. Placené pluginy (WP Rocket) pomáhají s rychlostí, ale nejsou podmínkou."),
@@ -481,7 +481,7 @@ BLOG_ARTICLES = {
 <p>Nesťahujte päť cache pluginov naraz, bojujú navzájom. Neoptimalizujte rýchlosť na úkor funkčnosti (preťažanie AMP, odstránenie všetkých pluginov). A nepresúvajte web na lacnejší hosting, ak problém je v šablóne s 20 pluginmi.</p>
 
 <h2>Koľko rýchlosti stojí</h2>
-<p>Základné opravy (cache, obrázky, menej pluginov) zvládnem za 3 až 5 hodín = 36 až 60 EUR. Väčšie zásahy (hosting, šablóna) 8 až 15 hodín = 96 až 180 EUR. Súčasťou mesačného retainera od 120 EUR je aj priebežné sledovanie rýchlosti.</p>
+<p>Základné opravy (cache, obrázky, menej pluginov) zvládnem za 3 až 5 hodín (36 až 60 EUR jednorazovo). Väčšie zásahy (hosting, šablóna) riešim v rámci retainera od 120 EUR mesačne, kam patrí aj priebežné sledovanie rýchlosti.</p>
 """,
             "faq": [
                 ("Aká je ideálna rýchlosť WordPress webu?", "LCP pod 2,5 sekundy, INP pod 200 ms, CLS pod 0,1. Google to meria cez Core Web Vitals a radí rýchlejšie weby výš."),
@@ -526,7 +526,7 @@ BLOG_ARTICLES = {
 <p>Nepoužívejte pět cache pluginů najednou, bojují mezi sebou. Neoptimalizujte rychlost za cenu funkce webu. A měňte hosting jen tehdy, když víte, že hosting je problém, ne šablona.</p>
 
 <h2>Kolik to stojí</h2>
-<p>Základní opravy (cache, obrázky, méně pluginů) zvládnu za 3 až 5 hodin = 36 až 60 EUR. Větší zásahy (hosting, šablona) 8 až 15 hodin = 96 až 180 EUR. Součástí měsíčního retaineru od 120 EUR je i průběžné sledování rychlosti.</p>
+<p>Základní opravy (cache, obrázky, méně pluginů) zvládnu za 3 až 5 hodin (36 až 60 EUR jednorázově). Větší zásahy riešim v rámci retainera od 120 EUR měsíčně, včetně průběžného sledování rychlosti.</p>
 """,
             "faq": [
                 ("Jaká je ideální rychlost WordPress webu?", "LCP pod 2,5 sekundy, INP pod 200 ms, CLS pod 0,1. Google měří Core Web Vitals a rychlejší weby řadí výš."),
@@ -564,7 +564,7 @@ BLOG_ARTICLES = {
 </ul>
 
 <h2>Ako často publikovať</h2>
-<p>Pravidelnosť prekoná objem. Dva články mesačne, každý na plánované kľúčové slovo, stavia autoritu systémovo. Desať článkov naraz a potom ticho Google neodmení. Pri mojej spolupráci obsahuje retainer od 180 EUR mesačne 2 až 4 články na WordPress priamo s vložením, meta údajmi a internými odkazmi.</p>
+<p>Pravidelnosť prekoná objem. Dva články mesačne, každý na plánované kľúčové slovo, stavia autoritu systémovo. Desať článkov naraz a potom ticho Google neodmení. Pri mojej spolupráci obsahuje Štandard a Pro balíček (144 až 180 EUR mesačne) 1 až 2 články na WordPress priamo s vložením, meta údajmi a internými odkazmi.</p>
 
 <h2>Staré články sú zlato</h2>
 <p>Článok po 12 mesiacoch obnovte: aktualizujte čísla, pridajte nové informácie, skontrolujte odkazy. Google rád re-indexuje obnovený obsah a často posunie vyššie. Obnova býva účinnejšia než nový článok, lebo stránka už má históriu v Google.</p>
@@ -602,7 +602,7 @@ BLOG_ARTICLES = {
 </ul>
 
 <h2>Jak často publikovat</h2>
-<p>Pravidelnost překoná objem. Dva články měsíčně, každý na plánované klíčové slovo, staví autoritu systémově. Retainer od 180 EUR měsíčně obsahuje 2 až 4 články s meta údaji a interními odkazy, vložené přímo do WordPressu.</p>
+<p>Pravidelnost překoná objem. Dva články měsíčně, každý na plánované klíčové slovo, staví autoritu systémově. Standard a Pro balíček (144 až 180 EUR měsíčně) obsahuje 1 až 2 články s meta údaji a interními odkazy, vložené přímo do WordPressu.</p>
 
 <h2>Staré články jsou zlato</h2>
 <p>Článek po 12 měsících obnovte: aktualizujte čísla, přidejte nové informace. Google rád re-indexuje obnovený obsah a často ho posune výš. Obnova bývá efektivnější než nový článek, protože stránka už má historii.</p>
