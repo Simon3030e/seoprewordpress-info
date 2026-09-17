@@ -257,6 +257,7 @@ def base(*, market: str, path: str, title: str, desc: str, canonical: str,
 <script src="{asset}assets/js/nav.js"></script>
 <script src="{asset}assets/js/animations.js"></script>
 <script src="{asset}assets/js/forms.js"></script>
+<script src="{asset}assets/js/audit-popup.js"></script>
 <script src="{asset}assets/js/cookie-banner.js"></script>
 </body>
 </html>
@@ -441,6 +442,41 @@ def org_schema(desc: str) -> str:
   "inLanguage": "sk"
 }}
 </script>"""
+
+
+def roi_band(market: str, niche: str = "") -> str:
+    """Return-on-investment band: what SEO can return for the monthly retainer.
+    Numbers are honest examples, not promises: based on real client GSC data."""
+    if market == "sk":
+        title = "Predstava návratnosti: čo z toho môže mať váš web"
+        rows = [
+            ("120 EUR", "mesačne (10 hodín)", "Malý web: 5 až 10 nových zákazníkov mesačne z Google = návratnosť už pri jednej objednávke."),
+            ("144 EUR", "mesačne (12 hodín)", "Web s obsahom: každý nový článok je dlhodobý zdroj zákazníkov, nie jednorazová reklama."),
+            ("180 EUR", "mesačne (15 hodín)", "E-shop alebo blog: obsah, ktorý pracuje mesiace po zverejnení, bez platenej reklamy."),
+        ]
+    else:
+        title = "Představa návratnosti investice do SEO"
+        rows = [
+            ("120 EUR", "měsíčně (10 hodin)", "Malý web: 5 až 10 nových zákazníků měsíčně z Google = návratnost už při jedné objednávce."),
+            ("144 EUR", "měsíčně (12 hodin)", "Web s obsahem: každý článek je dlouhodobý zdroj zákazníků, ne jednorázová reklama."),
+            ("180 EUR", "měsíčně (15 hodin)", "E-shop nebo blog: obsah, který pracuje měsíce po zveřejnění, bez placené reklamy."),
+        ]
+    cells = "".join(
+        f'<div class="benefit-card card-hover reveal" data-delay="{(i + 1) * 100}" style="background:rgba(255,255,255,0.08); border:none;">'
+        f'<div class="roi-num" style="color:#fff;">{amt}<small>{per}</small></div>'
+        f'<p class="roi-note" style="color:rgba(255,255,255,0.92);">{note}</p>'
+        f'</div>' for i, (amt, per, note) in enumerate(rows))
+    return f"""
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="roi-band" style="display:block; padding:44px 40px;">
+      <h2 style="color:#fff; margin:0 0 8px; font-size:1.6rem;">{title}</h2>
+      <p class="roi-note" style="margin:0 0 26px;">{'Retainer nie je náklad, ale investícia: jedna objednávka z Google ju zvyčajne pokryje.' if market == 'sk' else 'Retainer není náklad, ale investice: jedna objednávka z Google ji obvykle pokryje.'}</p>
+      <div class="pricing-grid">{cells}</div>
+      <p style="font-size:0.78rem; opacity:0.7; margin:18px 0 0;">{'Odhady na základe reálnych dát klientov z Google Search Console. Presný predik vám dá bezplatný audit.' if market == 'sk' else 'Odhady na základě dat klientů z Google Search Console. Přesnou predikci vám dá bezplatný audit.'}</p>
+    </div>
+  </div>
+</section>"""
 
 
 def schema_service(name: str, desc: str, url: str, offers_hours: int = 10) -> str:

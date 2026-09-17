@@ -6,7 +6,7 @@ Every page is (rel_path, html). Content comes from config.py; copy adapts
 to the niche through NICHE copy dicts defined here. Language: SK primary
 (root + /sk/), CZ mirror (/cz/).
 """
-from engine import (base, page_hero, cta_band, faq_block, faq_schema,
+from engine import (base, page_hero, cta_band, faq_block, faq_schema, roi_band,
                     steps_block, benefit_cards, kw_band, org_schema,
                     schema_service, results_slider, gicon, EMAIL, MAIN_SITE)
 import config as cfg
@@ -95,6 +95,7 @@ def home(market: str = "sk") -> tuple[str, str]:
   </div>
 </section>
 
+{roi_band(market)}
 {cta_band(c['cta_t'], c['cta_x'], market)}
 """
     canonical = cfg.engine.BASE + cfg.engine.MARKET_HOME[market]
@@ -231,6 +232,7 @@ def cennik(market: str = "sk") -> tuple[str, str]:
   </div>
 </section>
 {faq_section(market, 'cennik')}
+{roi_band(market)}
 {cta_band(c['cta_t'], c['cta_x'], market)}
 """
     html = base(market=market, path=price_dir + "/", title=c['price_title'], desc=c['price_desc'],
