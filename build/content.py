@@ -274,3 +274,348 @@ BLOG_POSTS = {
          "desc": "Struktura článku, klíčová slova a interní odkazy. Jak psát, aby článek někdo četl a Google ho rád.", "tag": "Obsah"},
     ],
 }
+
+
+# ---------------------------------------------------------------- blog articles
+# BLOG_ARTICLES[slug][market] = full post content. Answer-first structure per
+# the noktostudio blog format: Stručná odpoveď, sections, FAQ, related posts.
+# Pricing: 12 EUR/hod, monthly retainers 120-480 EUR.
+
+BLOG_ARTICLES = {
+    "seo-wordpress-navod": {
+        "slug": "seo-wordpress-navod",
+        "sk": {
+            "label": "Návod",
+            "h1": "SEO pre WordPress: kompletný návod 2026",
+            "title": "SEO pre WordPress: kompletný návod 2026 | SEO pre WordPress",
+            "desc": "SEO pre WordPress krok za krokom: nastavenie, pluginy, rýchlosť, obsah a meranie. Návod s reálnymi číslami a cenami od 120 EUR mesačne.",
+            "date_display": "17. 9. 2026",
+            "date_iso": "2026-09-17",
+            "answer": "SEO pre WordPress je nastavenie webu tak, aby mu Google rozumel: čisté permalinky, jeden SEO plugin (Yoast alebo Rank Math), rýchlosť pod 2,5 sekundy LCP, sitemap v Search Console a obsah na dopyty, ktoré zákazníci reálne hľadajú. Prvé pohyby za 2 až 4 mesiace, cena od 120 EUR mesačne (12 EUR za hodinu, 10 hodín pre malý web).",
+            "sections": """
+<h2>Čo Google od WordPress webu očakáva</h2>
+<p>WordPress je dobrý základ pre SEO, ale samotná inštalácia nestačí. Google hodnotí tri skupiny vecí: <strong>techniku</strong> (rýchlosť, indexáciu, mobilnú verziu), <strong>obsah</strong> (relevanciu k dopytom) a <strong>autoritu</strong> (odkazy a zmienky). WordPress weby najčastejšie zlyhávajú na dvoch miestach: rýchlosť (veľa pluginov, ťažká šablóna) a obsah (blog, ktorý nikto nepíše). Presne tieto dve veci riešim pri spolupráci.</p>
+
+<h2>Krok 1: Základné nastavenie (30 minút)</h2>
+<ul>
+<li><strong>Permalinky</strong>: Nastavenia → Trvalé odkazy → "Názov príspevku". Čisté adresy ako /blog/seo-wordpress-navod/ nie /?p=123.</li>
+<li><strong>SEO plugin</strong>: Yoast alebo Rank Math. Jeden stačí, dva sa bijú. Nastavíte meta titulky, popisy a sitemap.</li>
+<li><strong>Search Console</strong>: overte si web a pošlite sitemap.xml. Google začne vidieť vaše stránky.</li>
+<li><strong>HTTPS</strong>: vždy. Google meria bezpečnosť ako signál.</li>
+</ul>
+
+<h2>Krok 2: Rýchlosť, ktorá Google uspokojí</h2>
+<p>WordPress weby bývajú pomalé kvôli ťažkým šablónam, zbytočným pluginom a neoptimalizovaným obrázkom. Cieľ: LCP pod 2,5 s, INP pod 200 ms, CLS pod 0,1. V praxi: jeden cache plugin (WP Rocket alebo LiteSpeed Cache), WebP obrázky, odinštalovať nepoužívané pluginy. Meranie: <a href="https://pagespeed.web.dev/" target="_blank" rel="noopener noreferrer">PageSpeed Insights</a>, bezplatný.</p>
+
+<h2>Krok 3: Obsah na dopyty, ktoré hľadajú zákazníci</h2>
+<p>Blog na WordPress je najrýchlejšia cesta k zákazníkom z Google. Napíšte články na otázky, ktoré si zákazníci kladú pred nákupom: "ako si vybrať...", "koľko stojí...", "najlepší X pre Y". Každý článok: jedno cieľové kľúčové slovo, H2 nadpisy, interný odkaz na službu, 800 až 1500 slov. Dopyty a objemy overíte cez Marketing Miner (SK/CZ dáta) alebo Google autocomplete.</p>
+
+<h2>Krok 4: Meranie a udržiavanie</h2>
+<p>Mesačne skontrolujte: pozície a kliky (Search Console), rýchlosť (PageSpeed), nové obsahy. Staré články po roku obnovte, Google ich rád re-indexuje. Ak nechcete robiť SEO sami, robím to za vás: 12 EUR za hodinu, retainer od 120 EUR mesačne pre malý web, 240 až 480 EUR pre web s blogom a e-commerce. Všetko vykázané v mesačnom reporte.</p>
+
+<h2>Koľko to stojí v praxi</h2>
+<p>Malý web (10 strán): 10 hodín mesačne = 120 EUR. Web s blogom (2 články mesačne + technika): 15 až 20 hodín = 180 až 240 EUR. WooCommerce e-shop: 30 až 40 hodín = 360 až 480 EUR. Prvá hodina je bezplatný hovor a audit, aby ste videli, čo by SEO u vás znamenalo.</p>
+""",
+            "faq": [
+                ("Potrebujem na SEO WordPress platiť pluginy?", "Nie. Bezplatný Yoast alebo Rank Math pokrýva meta údaje a sitemap. Platene pluginy (WP Rocket na cache) pomáhajú pri rýchlosti, ale nie sú podmienkou."),
+                ("Môžem SEO na WordPress robiť sám?", "Základy áno: permalinky, plugin, obsah. Práca s pozíciami na konkurenčných dopytoch, technika a stratégia sú už práca pre špecialistu. Začnite sám, keď narazíte na stenu, ozvite sa."),
+                ("Ako dlho trvá, kým WordPress SEO funguje?", "Prvé pohyby na menej konkurenčných dopytoch za 2 až 4 mesiace. Hlavné dopyty 6 až 12 mesiacov. Záleží na konkurencii vo vašom odvetví."),
+            ],
+            "related": [
+                ("wordpress-seo-pluginy", "WordPress SEO pluginy: čo naozaj potrebujete"),
+                ("rychlost-wordpressu", "Rýchlosť WordPressu: ako zrýchliť web pre Google"),
+            ],
+        },
+        "cz": {
+            "label": "Návod",
+            "h1": "SEO pro WordPress: kompletní návod 2026",
+            "title": "SEO pro WordPress: kompletní návod 2026 | SEO pro WordPress",
+            "desc": "SEO pro WordPress krok za krokem: nastavení, pluginy, rychlost, obsah a měření. Návod s reálnými čísly a cenami od 120 EUR měsíčně.",
+            "date_display": "17. 9. 2026",
+            "date_iso": "2026-09-17",
+            "answer": "SEO pro WordPress je nastavení webu tak, aby mu Google rozumel: čisté permalinky, jeden SEO plugin (Yoast nebo Rank Math), rychlost pod 2,5 sekundy LCP, sitemap v Search Console a obsah na dotazy, které zákazníci reálně hledají. První pohyby za 2 až 4 měsíce, cena od 120 EUR měsíčně (12 EUR za hodinu, 10 hodin pro malý web).",
+            "sections": """
+<h2>Co Google od webu na WordPress očekává</h2>
+<p>WordPress je dobrý základ pro SEO, ale samotná instalace nestačí. Google hodnotí tři skupiny věcí: <strong>techniku</strong> (rychlost, indexaci, mobilní verzi), <strong>obsah</strong> (relevanci k dotazům) a <strong>autoritu</strong> (odkazy a zmínky). WordPress weby nejčastěji selhávají na dvou místech: rychlost (mnoho pluginů, těžká šablona) a obsah (blog, který nikdo nepíše). Přesně tyhle dvě věci řeším při spolupráci.</p>
+
+<h2>Krok 1: Základní nastavení (30 minut)</h2>
+<ul>
+<li><strong>Permalinky</strong>: Nastavení → Trvalé odkazy → "Název příspěvku". Čisté adresy jako /blog/seo-wordpress-navod/, ne /?p=123.</li>
+<li><strong>SEO plugin</strong>: Yoast nebo Rank Math. Jeden stačí, dva se perou. Nastavíte meta titulky, popisy a sitemap.</li>
+<li><strong>Search Console</strong>: ověřte web a pošlete sitemap.xml. Google začne vidět vaše stránky.</li>
+<li><strong>HTTPS</strong>: vždy. Google měří jako signál kvality.</li>
+</ul>
+
+<h2>Krok 2: Rychlost, která Google uspokojí</h2>
+<p>WordPress weby bývají pomalé kvůli těžkým šablonám, zbytečným pluginům a neoptimalizovaným obrázkům. Cíl: LCP pod 2,5 s, INP pod 200 ms, CLS pod 0,1. V praxi: jeden cache plugin (WP Rocket nebo LiteSpeed Cache), WebP obrázky, méně pluginů. Měření: <a href="https://pagespeed.web.dev/" target="_blank" rel="noopener noreferrer">PageSpeed Insights</a>, zdarma.</p>
+
+<h2>Krok 3: Obsah na dotazy, které hledají zákazníci</h2>
+<p>Blog na WordPress je nejrychlejší cesta k zákazníkům z Google. Pište články na otázky, které si zákazníci kladou před nákupem: "jak vybrat...", "kolik stojí...", "nejlepší X pro Y". Každý článek: jedno cílové klíčové slovo, H2 nadpisy, interní odkaz na službu, 800 až 1500 slov. Dotazy a objemy ověříte přes Marketing Miner (CZ/SK data) nebo zdarma přes autocomplete.</p>
+
+<h2>Krok 4: Měření a udržování</h2>
+<p>Měsíčně zkontrolujte: pozice a kliky (Search Console), rychlost (PageSpeed), staré články po roce obnovte. Když nechcete SEO dělat sami, udělám to za vás: 12 EUR za hodinu, retainer od 120 EUR měsíčně pro malý web, 240 až 480 EUR pro web s blogem a e-commerce. Vše vykázané v měsíčním reportu.</p>
+
+<h2>Kolik to stojí v praxi</h2>
+<p>Malý web (10 stránek): 10 hodin měsíčně = 120 EUR. Web s blogem (2 články měsíčně + technika): 15 až 20 hodin = 180 až 240 EUR. WooCommerce e-shop: 30 až 40 hodin = 360 až 480 EUR. První hodina je bezplatný hovor a audit, abyste viděli, co by SEO u vás znamenalo.</p>
+""",
+            "faq": [
+                ("Potřebuji platit pluginy?", "Ne. Bezplatný Yoast nebo Rank Math pokrývá meta údaje a sitemap. Placené pluginy (WP Rocket) pomáhají s rychlostí, ale nejsou podmínkou."),
+                ("Můžu SEO na WordPress dělat sám?", "Ano. Základy (permalinky, plugin, obsah) zvládne každý. Pozice na konkurenčních dotazech, technika a strategie jsou už práce pro specialistu."),
+                ("Jak dlouho trvá, než WordPress SEO funguje?", "První pohyby na méně konkurenčních dotazech za 2 až 4 měsíce. Hlavní dotazy 6 až 12 měsíců. Záleží na konkurenci ve vašem oboru."),
+            ],
+            "related": [
+                ("wordpress-seo-pluginy", "WordPress SEO pluginy: co opravdu potřebujete"),
+                ("rychlost-wordpressu", "Rychlost WordPressu: jak zrychlit web pro Google"),
+            ],
+        },
+    },
+    "wordpress-seo-pluginy": {
+        "slug": "wordpress-seo-pluginy",
+        "sk": {
+            "label": "Nástroje",
+            "h1": "WordPress SEO pluginy: čo naozaj potrebujete (2026)",
+            "title": "WordPress SEO pluginy: čo naozaj potrebujete | SEO pre WordPress",
+            "desc": "Yoast vs Rank Math vs All in One SEO: ktorý WordPress SEO plugin vybrať, čo nastaviť a prečo plugin sám SEO neurobí. Cena od 120 EUR mesačne.",
+            "date_display": "17. 9. 2026",
+            "date_iso": "2026-09-17",
+            "answer": "Potrebujete presne jeden SEO plugin: Yoast SEO (najrozšírenejší, zdarma) alebo Rank Math (viac funkcií v bezplatnej verzii). Nastavte v ňom meta titulky, meta popisy, XML sitemap a breadcrumbs. Žiadny plugin ale sám SEO neurobí: obsah, rýchlosť a odkazy robí človek, nie plugin.",
+            "sections": """
+<h2>Yoast vs Rank Math: ktorý vybrať</h2>
+<p>Oba fungujú. Yoast má dlhšiu históriu a jednoduchšie rozhranie, Rank Math dáva v bezplatnej verzii viac (schema, 404 monitoring, viac kľúčových slov). Moje odporúčanie: <strong>Rank Math</strong> pre nové weby, <strong>Yoast</strong> ak už máte web na ňom rozbehatý. Prepočet medzi nimi je zbytočná práca.</p>
+
+<h2>Čo v plugine nastaviť (a čo nechať)</h2>
+<ul>
+<li><strong>Meta titulky a popisy</strong>: ručne pre stránky služieb a hlavné kategórie. Nie automaticky, to dáva rovnaké titulky všade.</li>
+<li><strong>XML sitemap</strong>: zapnúť a poslať do Search Console.</li>
+<li><strong>Canonical</strong>: nechať zapnuté, plugin to rieši sám.</li>
+<li><strong>Schema (štruktúrované dáta)</strong>: zapnúť Organization a WebSite. Article na blogu.</li>
+<li><strong>Analysis (oranžové/sivé kolieska)</strong>: ignorovať. Koliesko je len odhad, nie Google. Obsah píšte pre zákazníkov.</li>
+</ul>
+
+<h2>Pluginy, ktoré SEO pomáhajú (sekundárne)</h2>
+<p>Cache plugin (LiteSpeed Cache, WP Rocket) zrýchľuje web, čo Google meria. Broken link checker odhalí rozbité odkazy. Redirect plugin (Redirection) rieši presmerovania pri zmene URL. Ale pozor: každý ďalší plugin znamená viac kódu a spomalší web. Riešte len to, čo potrebujete.</p>
+
+<h2>Čo plugin nespraví</h2>
+<p>Plugin nenapíše obsah, nenastaví interné odkazy, nevyhľadá kľúčové slová a nezíska odkazy. To je 80 percent SEO práce. Plugin je len nástroj, ktorý zabezpečí technické minimum. Ak chcete pozície, potrebujete obsah na reálne dopyty a techniku, ktorá sa rýchlo načítava. Presne to robím v balíkoch od 120 EUR mesačne (12 EUR za hodinu).</p>
+""",
+            "faq": [
+                ("Sú SEO pluginy zdarma dostatočné?", "Áno. Rank Math a Yoast v bezplatnej verzii pokrývajú meta údaje, sitemap aj schema. Platené verrie riešia viac webov alebo e-commerce, pre väčšinu webov nepotrebujete."),
+                ("Môžem mať dva SEO pluginy naraz?", "Nie. Dva SEO pluginy sa perú o meta údaje a vytvárajú duplicitné schema. Vyberte jeden."),
+                ("Pomôže mi SEO analytický plugin?", "Analýza v plugine (kolieska) je hrubý odhad. Reálne dáta sú v Search Console. Nenechajte sa mýliť zelenými kolieskami."),
+            ],
+            "related": [
+                ("seo-wordpress-navod", "SEO pre WordPress: kompletný návod 2026"),
+                ("seo-blog-na-wordpress", "Ako písať blog na WordPress, ktorý Google rád"),
+            ],
+        },
+        "cz": {
+            "label": "Nástroje",
+            "h1": "WordPress SEO pluginy: co opravdu potřebujete (2026)",
+            "title": "WordPress SEO pluginy: co opravdu potřebujete | SEO pro WordPress",
+            "desc": "Yoast vs Rank Math vs All in One SEO: který WordPress SEO plugin vybrat, co nastavit a proč plugin sám SEO neudělá. Cena od 120 EUR měsíčně.",
+            "date_display": "17. 9. 2026",
+            "date_iso": "2026-09-17",
+            "answer": "Potřebujete přesně jeden SEO plugin: Yoast (nejrozšířenější) nebo Rank Math (více funkcí zdarma). Nastavte v něm meta titulky, meta popisy, XML sitemap a schema. Žádný plugin ale sám SEO neudělá: obsah, rychlost a odkazy dělá člověk, ne plugin. Cena SEO práce od 120 EUR měsíčně (12 EUR za hodinu).",
+            "sections": """
+<h2>Yoast vs Rank Math</h2>
+<p>Oba fungují. Yoast má delší historii a jednodušší rozhraní, Rank Math dává ve verzi zdarma víc: schema, monitoring 404, více klíčových slov. Moje doporučení: <strong>Rank Math</strong> pro nové weby, <strong>Yoast</strong> když už web běží na něm. Přepínání mezi nimi je zbytečná práce.</p>
+
+<h2>Co v pluginu nastavit</h2>
+<ul>
+<li><strong>Meta titulky a popisy</strong>: ručně pro stránky služeb a hlavní kategorie. Ne automaticky, to dává stejný text všude.</li>
+<li><strong>XML sitemap</strong>: zapnout a poslat do Search Console.</li>
+<li><strong>Canonical</strong>: nechat zapnuté, plugin to řeší sám.</li>
+<li><strong>Schema</strong>: zapnout Organization a WebSite, na blogu Article.</li>
+<li><strong>Analysis (zelená kolečka)</strong>: ignorovat. Kolečko je hrubý odhad, obsah pište pro zákazníky.</li>
+</ul>
+
+<h2>Pluginy, které pomáhají vedle SEO pluginu</h2>
+<p>Cache plugin (LiteSpeed Cache, WP Rocket) zrychluje web, co Google měří. Redirection řeší přesměrování při změně URL. Broken link checker najde rozbité odkazy. Ale pozor: každý plugin přidává kód a zpomaluje web. Méně pluginů = rychlejší web.</p>
+
+<h2>Co plugin neudělá</h2>
+<p>Plugin nenapíše obsah, nenajde klíčová slova a nezíská odkazy. To je práce člověka. Plugin zajistí technické minimum, ale pozice potřebují obsah na reálná hledání a techniku, která se rychle načítá. Přesně to dělám v balíčcích od 120 EUR měsíčně (12 EUR za hodinu).</p>
+""",
+            "faq": [
+                ("Jsou SEO pluginy zdarma dostatečné?", "Ano. Rank Math a Yoast ve verzi zdarma pokrývají meta údaje, sitemap i schema. Placené verze řeší víc webů a e-commerce, pro většinu webů nepotřebujete."),
+                ("Můžu mít dva SEO pluginy?", "Ne. Dva SEO pluginy se perou o meta údaje a vytvářejí duplicity. Vyberte jeden."),
+                ("Věřit zeleným kolečkům v pluginu?", "Ne. Kolečko je hrubý odhad pluginu. Reálná data jsou ve Search Console."),
+            ],
+            "related": [
+                ("seo-wordpress-navod", "SEO pro WordPress: kompletní návod 2026"),
+                ("seo-blog-na-wordpress", "Jak psát blog na WordPress, který Google rád"),
+            ],
+        },
+    },
+    "rychlost-wordpressu": {
+        "slug": "rychlost-wordpressu",
+        "sk": {
+            "label": "Technika",
+            "h1": "Rýchlosť WordPressu: ako zrýchliť web pre Google (2026)",
+            "title": "Rýchlosť WordPressu: ako zrýchliť web pre Google | SEO pre WordPress",
+            "desc": "Rýchlosť WordPress webu: LCP pod 2,5s, cache, WebP obrázky a optimalizácia pluginov. Krok za krokom, s reálnymi číslami z praxe.",
+            "date_display": "17. 9. 2026",
+            "date_iso": "2026-09-17",
+            "answer": "Rýchlosť WordPressu riešite v tomto poradí: jeden cache plugin (LiteSpeed Cache zdarma alebo WP Rocket), WebP formát obrázkov, menej pluginov (menej kódu), kvalitný hosting. Cieľ: LCP pod 2,5 sekundy, INP pod 200 ms, CLS pod 0,1 (Core Web Vitals). Pomalý web stráca zákazníkov aj pozície v Google.",
+            "sections": """
+<h2>Prečo je rýchlosť dôležitá</h2>
+<p>Google meria rýchlosť ako signál kvality (Core Web Vitals). Pomalý web má vyšší odchodovú mieru: polovica návštevníkov odchádza, ak sa stránka načítava dlhšie ako 3 sekundy. Na WordPress weboch je rýchlosť navyše problém číslo jedna, lebo šablóny a pluginy pridávajú veľa kódu.</p>
+
+<h2>Meranie: čo a ako merať</h2>
+<p>Používajte <a href="https://pagespeed.web.dev/" target="_blank" rel="noopener noreferrer">PageSpeed Insights</a> (bezplatný). Dôležité tri metriky:</p>
+<ul>
+<li><strong>LCP</strong> (Largest Contentful Paint): čas načítania hlavného obsahu. Cieľ pod 2,5 s.</li>
+<li><strong>INP</strong> (Interaction to Next Paint): reakcia na klik. Cieľ pod 200 ms.</li>
+<li><strong>CLS</strong> (Cumulative Layout Shift): posúvanie obsahu pri načítaní. Cieľ pod 0,1.</li>
+</ul>
+
+<h2>Päť opráv, ktoré najviac posunú rýchlosť</h2>
+<ul>
+<li><strong>Cache plugin</strong>: LiteSpeed Cache (zdarma) alebo WP Rocket (cca 50 EUR/rok). Rozdiel vidno hneď.</li>
+<li><strong>WebP obrázky</strong: konvertujte cez plugin (Imagify, Smush) alebo pred nahraním. Obrázky bývajú najväčším problémom.</li>
+<li><strong>Menej pluginov</strong>: každý plugin pridáva CSS a JS. Vypnite a vymažte nepoužívané.</li>
+<li><strong>Kvalitný hosting</strong: lacný shared hosting brzdí aj najlepšie optimalizovaný WordPress. Pre podnikanie si spravte upgrade.</li>
+<li><strong>Lazy loading</strong: obrázky pod oknom načítavať až pri scrollovaní. WordPress to robí od verzie 5.5 automaticky.</li>
+</ul>
+
+<h2>Čo nerobiť (bežné chyby)</h2>
+<p>Nesťahujte päť cache pluginov naraz, bojujú navzájom. Neoptimalizujte rýchlosť na úkor funkčnosti (preťažanie AMP, odstránenie všetkých pluginov). A nepresúvajte web na lacnejší hosting, ak problém je v šablóne s 20 pluginmi.</p>
+
+<h2>Koľko rýchlosti stojí</h2>
+<p>Základné opravy (cache, obrázky, menej pluginov) zvládnem za 3 až 5 hodín = 36 až 60 EUR. Väčšie zásahy (hosting, šablóna) 8 až 15 hodín = 96 až 180 EUR. Súčasťou mesačného retainera od 120 EUR je aj priebežné sledovanie rýchlosti.</p>
+""",
+            "faq": [
+                ("Aká je ideálna rýchlosť WordPress webu?", "LCP pod 2,5 sekundy, INP pod 200 ms, CLS pod 0,1. Google to meria cez Core Web Vitals a radí rýchlejšie weby výš."),
+                ("Pomôže CDN?", "Áno, pre weby s návštevníkmi z viacerých krajín. Pre slovenský web s lokálnym publikom je najprv cache a obrázky, CDN potom."),
+                ("Prečo je môj WordPress pomalý, keď mám cache plugin?", "Najčastejšie: ťažká šablóna, veľa pluginov, neoptimalizované obrázky alebo slabý hosting. Cache rieši len jednu vrstvu."),
+            ],
+            "related": [
+                ("seo-wordpress-navod", "SEO pre WordPress: kompletný návod 2026"),
+                ("wordpress-seo-pluginy", "WordPress SEO pluginy: čo naozaj potrebujete"),
+            ],
+        },
+        "cz": {
+            "label": "Technika",
+            "h1": "Rychlost WordPressu: jak zrychlit web pro Google (2026)",
+            "title": "Rychlost WordPressu: jak zrychlit web pro Google | SEO pro WordPress",
+            "desc": "Rychlost WordPress webu: LCP pod 2,5 sekundy, cache, WebP obrázky a optimalizace pluginů. Krok za krokem, s reálnymi čísly z praxe.",
+            "date_display": "17. 9. 2026",
+            "date_iso": "2026-09-17",
+            "answer": "Rychlost WordPressu řešte v tomto pořadí: jeden cache plugin (LiteSpeed Cache zdarma), WebP formát obrázků, méně pluginů, kvalitní hosting. Cíl: LCP pod 2,5 sekundy, INP pod 200 ms, CLS pod 0,1 (Core Web Vitals). Pomalý web ztrácí zákazníky i pozice v Google.",
+            "sections": """
+<h2>Proč je rychlost důležitá</h2>
+<p>Google měří rychlost jako signál kvality (Core Web Vitals) a pomalé weby řadí níž. Půlka návštěvníků odejde, když se web načítá déle než 3 sekundy. U WordPress webů je rychlost častější problém, protože šablony a pluginy přidávají hodně kódu.</p>
+
+<h2>Měření</h2>
+<p>Používejte <a href="https://pagespeed.web.dev/" target="_blank" rel="noopener noreferrer">PageSpeed Insights</a> (zdarma). Tři metriky:</p>
+<ul>
+<li><strong>LCP</strong>: čas načtení hlavního obsahu. Cíl pod 2,5 s.</li>
+<li><strong>INP</strong>: reakce na klik. Cíl pod 200 ms.</li>
+<li><strong>CLS</strong>: posouvání obsahu při načítání. Cíl pod 0,1.</li>
+</ul>
+
+<h2>Pět oprav, které nejvíc posunou rychlost</h2>
+<ul>
+<li><strong>Cache plugin</strong>: LiteSpeed Cache (zdarma) nebo WP Rocket. Rozdíl vidíte okamžitě.</li>
+<li><strong>WebP obrázky</strong>: konvertujte přes plugin (Imagify, Smush). Obrázky bývají hlavní problém.</li>
+<li><strong>Méně pluginů</strong>: každý plugin přidává CSS a JS. Vypněte nepoužívané.</li>
+<li><strong>Kvalitní hosting</strong>: lacný hosting brzdí i nejrychlejší WordPress.</li>
+<li><strong>Lazy loading</strong>: obrázky pod oknem načítat při scrollu. WordPress to umí od verze 5.5.</li>
+</ul>
+
+<h2>Čo nedělat</h2>
+<p>Nepoužívejte pět cache pluginů najednou, bojují mezi sebou. Neoptimalizujte rychlost za cenu funkce webu. A měňte hosting jen tehdy, když víte, že hosting je problém, ne šablona.</p>
+
+<h2>Kolik to stojí</h2>
+<p>Základní opravy (cache, obrázky, méně pluginů) zvládnu za 3 až 5 hodin = 36 až 60 EUR. Větší zásahy (hosting, šablona) 8 až 15 hodin = 96 až 180 EUR. Součástí měsíčního retaineru od 120 EUR je i průběžné sledování rychlosti.</p>
+""",
+            "faq": [
+                ("Jaká je ideální rychlost WordPress webu?", "LCP pod 2,5 sekundy, INP pod 200 ms, CLS pod 0,1. Google měří Core Web Vitals a rychlejší weby řadí výš."),
+                ("Pomůže CDN?", "Ano, pro weby s návštěvníky z více zemí. Pro český web s lokálním publikem je první cache a obrázky."),
+                ("Proč je můj WordPress pomalý, když mám cache?", "Nejčastěji: těžká šablona, mnoho pluginů, neoptimalizované obrázky nebo slabý hosting. Cache řeší jen jednu vrstvu."),
+            ],
+            "related": [
+                ("seo-wordpress-navod", "SEO pro WordPress: kompletní návod 2026"),
+                ("wordpress-seo-pluginy", "WordPress SEO pluginy: co opravdu potřebujete"),
+            ],
+        },
+    },
+    "seo-blog-na-wordpress": {
+        "slug": "seo-blog-na-wordpress",
+        "sk": {
+            "label": "Obsah",
+            "h1": "Ako písať blog na WordPress, ktorý Google aj zákazníci čítajú",
+            "title": "Ako písať blog na WordPress pre Google | SEO pre WordPress",
+            "desc": "Blog na WordPress krok za krokom: výber tém podľa dopytov, štruktúra článku, interné odkazy. Od 120 EUR mesačne s obsahom v cene.",
+            "date_display": "17. 9. 2026",
+            "date_iso": "2026-09-17",
+            "answer": "Blog, ktorý Google rád, odpovedá na otázky, ktoré zákazníci reálne hľadajú. Štruktúra: jedno hlavné kľúčové slovo, H2 nadpisy podľa otázok, odpoveď v prvých 50 slovach, interné odkazy na služby. Dĺžka: 800 až 1500 slov. Frekvencia: 2 až 4 články mesačne stavia autoritu rýchlejšie, než jeden článok mesačne.",
+            "sections": """
+<h2>Najprv témy, nie písanie</h2>
+<p>Najčastejšia chyba: firma píše o sebe, nie o tom, čo zákazníci hľadajú. Témy hľadajte cez autocomplete v Google (začnite písať hlavné slovo a pozrite doplnky) a cez Marketing Miner (objemy na SK/CZ). Každý článok = jedno hlavné kľúčové slovo s objemom minimálne 10 vyhľadaní mesačne.</p>
+
+<h2>Štruktúra článku, ktorý Google rád</h2>
+<ul>
+<li><strong>Nadpis</strong>: hlavné kľúčové slovo na začiatku, dĺžka do 60 znakov.</li>
+<li><strong>Úvod (50 slov)</strong>: odpoveď na otázku hneď. Google to cituje, zákazník to dočíta.</li>
+<li><strong>H2 nadpisy</strong>: jednotlivé podotázky. Ideálne vo forme, v akej ľudia hľadajú ("ako...", "koľko...", "čo je...").</li>
+<li><strong>Odstavce</strong>: krátke, 3 až 4 riadky. Nie steny textu.</li>
+<li><strong>Interné odkazy</strong>: z článku na službu a na ďalšie články. To je to, čo posúva celý web.</li>
+<li><strong>Záver + CTA</strong>: čo má čitateľ urobiť ďalej.</li>
+</ul>
+
+<h2>Ako často publikovať</h2>
+<p>Pravidelnosť prekoná objem. Dva články mesačne, každý na plánované kľúčové slovo, stavia autoritu systémovo. Desať článkov naraz a potom ticho Google neodmení. Pri mojej spolupráci obsahuje retainer od 180 EUR mesačne 2 až 4 články na WordPress priamo s vložením, meta údajmi a internými odkazmi.</p>
+
+<h2>Staré články sú zlato</h2>
+<p>Článok po 12 mesiacoch obnovte: aktualizujte čísla, pridajte nové informácie, skontrolujte odkazy. Google rád re-indexuje obnovený obsah a často posunie vyššie. Obnova býva účinnejšia než nový článok, lebo stránka už má históriu v Google.</p>
+""",
+            "faq": [
+                ("Koľko slov má mať blogový článok?", "Dĺžku určuje téma a konkurencia. Typicky 800 až 1500 slov. Kvalita a pokrytie otázok zákazníkov rozhoduje viac než počet slov."),
+                ("Ako často publikovať na blogu?", "2 až 4 články mesačne je dobrý rytmus. Dôležitejšia je pravidelnosť a plán kľúčových slov než objem."),
+                ("Robí mi blog aj texty?", "Áno. Píšem články priamo do WordPressu s meta údajmi, nadpismi a internými odkazmi. Vy len schvaľujete a publikujete. Od 180 EUR mesačne v retaineri."),
+            ],
+            "related": [
+                ("seo-wordpress-navod", "SEO pre WordPress: kompletný návod 2026"),
+                ("rychlost-wordpressu", "Rýchlosť WordPressu: ako zrýchliť web pre Google"),
+            ],
+        },
+        "cz": {
+            "label": "Obsah",
+            "h1": "Jak psát blog na WordPress, který Google i zákazníci čtou",
+            "title": "Jak psát blog na WordPress pro Google | SEO pro WordPress",
+            "desc": "Blog na WordPress krok za krokem: výběr témat, struktura článku, interní odkazy. Od 120 EUR měsíčně s obsahem v ceně.",
+            "date_display": "17. 9. 2026",
+            "date_iso": "2026-09-17",
+            "answer": "Blog, který Google rád, odpovídá na otázky, které zákazníci reálně hledají. Struktura: jedno hlavní klíčové slovo, H2 nadpisy podle otázek, odpověď v prvních 50 slovech, interní odkazy na služby. Délka: 800 až 1500 slov. Frekvence: 2 až 4 články měsíčně stávají autoritu systémově.",
+            "sections": """
+<h2>Nejdřív témata, potom psaní</h2>
+<p>Nejčastější chyba: psaní bez plánu. Témata hledejte přes autocomplete v Google a přes Marketing Miner (objemy na CZ/SK). Každý článek = jedno hlavní klíčové slovo s objemem minimálně 10 hledání měsíčně.</p>
+
+<h2>Struktura článku, který Google rád</h2>
+<ul>
+<li><strong>Nadpis</strong>: hlavní klíčové slovo na začátku, délka do 60 znaků.</li>
+<li><strong>Úvod (50 slov)</strong>: odpověď hned. Google ji cituje, zákazník dočte.</li>
+<li><strong>H2 nadpisy</strong>: jednotlivé podotázky ve formě, jakou lidé hledají ("jak...", "kolik...", "co je...").</li>
+<li><strong>Odstavce</strong>: krátké, 3 až 4 řádky. Žádné zdi textu.</li>
+<li><strong>Interní odkazy</strong>: z článku na služby a další články. To posouvá celý web.</li>
+<li><strong>Závěr + CTA</strong>: co má čtenář udělat dál.</li>
+</ul>
+
+<h2>Jak často publikovat</h2>
+<p>Pravidelnost překoná objem. Dva články měsíčně, každý na plánované klíčové slovo, staví autoritu systémově. Retainer od 180 EUR měsíčně obsahuje 2 až 4 články s meta údaji a interními odkazy, vložené přímo do WordPressu.</p>
+
+<h2>Staré články jsou zlato</h2>
+<p>Článek po 12 měsících obnovte: aktualizujte čísla, přidejte nové informace. Google rád re-indexuje obnovený obsah a často ho posune výš. Obnova bývá efektivnější než nový článek, protože stránka už má historii.</p>
+""",
+            "faq": [
+                ("Kolik slov má mít článek?", "Typicky 800 až 1500 slov. Délku určuje téma a konkurence, kvalita a pokrytí dotazů rozhoduje víc než počet slov."),
+                ("Jak často publikovat?", "2 až 4 články měsíčně. Pravidelnost a plán klíčových slov důležitější než objem."),
+                ("Píšete mi i články?", "Ano. Píšu články přímo do WordPressu s meta údaji a interními odkazy. Vy jen schvalujete. Od 180 EUR měsíčně v retaineru."),
+            ],
+            "related": [
+                ("seo-wordpress-navod", "SEO pro WordPress: kompletní návod 2026"),
+                ("rychlost-wordpressu", "Rychlost WordPressu: jak zrychlit web pro Google"),
+            ],
+        },
+    },
+}

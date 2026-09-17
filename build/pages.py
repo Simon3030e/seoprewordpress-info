@@ -234,9 +234,9 @@ def cennik(market: str = "sk") -> tuple[str, str]:
 {cta_band(c['cta_t'], c['cta_x'], market)}
 """
     html = base(market=market, path=price_dir + "/", title=c['price_title'], desc=c['price_desc'],
-                canonical=cfg.engine.BASE + f"/{price_dir}/",
-                body=body, prefix="..", extra_head=org_schema(c['org_desc']))
-    return (f"{price_dir}/index.html", html)
+                canonical=cfg.engine.BASE + ("sk/" if market == "sk" else "cz/") + price_dir + "/",
+                body=body, prefix="../../", extra_head=org_schema(c['org_desc']))
+    return (("sk/" if market == "sk" else "cz/") + price_dir + "/index.html", html)
 
 
 # ---------------------------------------------------------------- page: jak pracujeme
@@ -271,15 +271,18 @@ def jak_pracujeme(market: str = "sk") -> tuple[str, str]:
 
 def blog(market: str = "sk") -> tuple[str, str]:
     c = COPY[market]
-    posts = BLOG_POSTS[market]
-    rows = "".join(f"""
+    root = cfg.engine.MARKET_ROOTS[market]
+    rows = ""
+    for slug, art in _content.BLOG_ARTICLES.items():
+        a = art[market]
+        rows += f"""
 <div class="project-card card-hover">
   <div class="project-card-body">
-    <h3><a href="{p['href']}" style="color:var(--text);">{p['title']}</a></h3>
-    <p>{p['desc']}</p>
-    <div class="project-tags"><span class="project-tag tag-violet">{p['tag']}</span></div>
+    <h3><a href="{root}blog/{slug}/" style="color:var(--text);">{a['h1']}</a></h3>
+    <p>{a['answer'][:160]}...</p>
+    <div class="project-tags"><span class="project-tag tag-violet">{a['label']}</span></div>
   </div>
-</div>""" for p in posts)
+</div>"""
     body = f"""
 {page_hero("Blog", c['blog_h1'], c['blog_sub'], [("Domov", cfg.engine.MARKET_HOME[market]), ("Blog", None)])}
 <section class="section">
@@ -449,4 +452,77 @@ def build_all() -> list[tuple[str, str]]:
     pages.append(privacy("cz"))
     pages.append(terms("sk"))
     pages.append(terms("cz"))
+    pages.extend(build_all_blogposts())
     return pages
+
+# ---------------------------------------------------------------- blog posts
+
+import re as _re
+import content as _content
+
+
+def blog_post(slug: str, market: str = "sk") -> tuple[str, str]:
+    """One blog post page: direct answer first, sections, FAQ, related, CTA.
+    Content comes from content.BLOG_ARTICLES[slug][market]."""
+    art = _content.BLOG_ARTICLES[slug][market]
+    root = cfg.engine.MARKET_ROOTS[market]
+    related = ""
+    for rslug, rtitle in art["related"]:
+        related += (f'<div class="benefit-card card-hover related-card">'
+                    f'<h3><a href="{root}blog/{rslug}/" style="color:var(--text);">{rtitle}</a></h3></div>')
+    sections = _re.sub(r"<h2>Stručná odpoveď</h2>\s*<p>.*?</p>", "", art["sections"], count=1, flags=_re.S)
+    body = f"""
+<section class="post-hero">
+  <div class="container" style="max-width:820px;">
+    <a href="{root}blog/" class="post-back">← Blog</a>
+    <span class="section-label">{art['label']}</span>
+    <h1>{art['h1']}</h1>
+    <p class="post-meta">{art['date_display']} · Šimon Štermenský · Nokto Studio</p>
+  </div>
+</section>
+
+<article class="section" style="padding-top:16px;">
+  <div class="container" style="max-width:820px;">
+    <div class="prose">
+      <div class="post-answer"><p>{art['answer']}</p></div>
+{sections}
+    </div>
+  </div>
+</article>
+
+<section class="section" style="padding-top:0;">
+  <div class="container" style="max-width:820px;">
+    <div class="section-head"><span class="section-label">FAQ</span><h2>{COPY[market]['faq_h2']}</h2></div>
+    {faq_block(art['faq'])}
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="container" style="max-width:820px;">
+    <div class="section-head"><span class="section-label">{'Prečítať aj' if market == 'sk' else 'Přečtěte také'}</span><h2>{'Súvisiace články' if market == 'sk' else 'Související články'}</h2></div>
+    <div class="grid-2">{related}</div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    {cta_band(COPY[market]['cta_t'], COPY[market]['cta_x'], market)}
+  </div>
+</section>
+"""
+    url = cfg.engine.BASE + root + f"blog/{slug}/"
+    from engine import article_schema
+    html = base(market=market, path=f"blog/{slug}/", title=art["title"], desc=art["desc"],
+                canonical=url, body=body, prefix="../../../", og_type="article",
+                extra_head=org_schema(COPY[market]['org_desc']) + article_schema(url=url, title=art["title"],
+                                                       desc=art["desc"], date_iso=art["date_iso"], lang=market)
+                          + faq_schema(art["faq"], url))
+    return (root.lstrip('/') + f"blog/{slug}/index.html", html)
+
+
+def build_all_blogposts() -> list[tuple[str, str]]:
+    out = []
+    for slug in _content.BLOG_ARTICLES:
+        for market in ("sk", "cz"):
+            out.append(blog_post(slug, market))
+    return out

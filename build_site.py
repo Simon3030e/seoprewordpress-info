@@ -61,19 +61,56 @@ def _alts(sk_sub: str) -> str:
 
 
 def write_sitemap():
+    """Discover every generated index.html on disk (after write_pages). Blog
+    posts and future pages land in the sitemap automatically."""
     rows = []
-    # SK home = root
-    rows.append(_mkurl(engine.BASE + "/", "1.0", _alts("")))
-    for path in sorted(config.SK_PATHS):
-        if path == "" or path in ("privacy/", "terms/"):
+    seen = set()
+    for page in sorted(REPO.rglob("index.html")):
+        rel = page.relative_to(REPO).as_posix()
+        dir_part = rel[:-len("index.html")]              # e.g. "sk/sluzby/.../"
+        if dir_part in ("privacy/", "terms/", "sk/privacy/", "sk/terms/",
+                        "cz/privacy/", "cz/terms/"):
+            continue  # legal pages: self-canonical only, keep out of sitemap
+        if dir_part.startswith("cz/"):
+            cz_sub = dir_part[3:]
+            sk_sub = None
+            for skp, czp in engine.HREFLANG_PAIR.items():
+                if czp == cz_sub:
+                    sk_sub = skp
+                    break
+            if sk_sub is None:
+                sk_sub = cz_sub
+            loc = engine.BASE + "/cz/" + cz_sub
+        elif dir_part == "cennik/" or dir_part == "cenik/":
+            sk_sub = "cennik/"
+            cz_sub = "cenik/"
+            loc = engine.BASE + ("/sk/cennik/" if dir_part == "cennik/" else "/cz/cenik/")
+        else:
+            sk_sub = dir_part[3:] if dir_part.startswith("sk/") else ""
+            loc = engine.BASE + ("/" if sk_sub == "" else "/sk/" + sk_sub)
+            cz_sub = engine.HREFLANG_PAIR.get(sk_sub, sk_sub if sk_sub == "" else None)
+        key = loc
+        if key in seen:
             continue
-        pr = "0.9" if path in ("sluzby/", "cennik/", "sluzby/seo-optimalizacia/") else "0.7"
-        rows.append(_mkurl(engine.BASE + "/sk/" + path, pr, _alts(path)))
-    for path in sorted(config.CZ_PATHS):
-        if path == "" or path in ("privacy/", "terms/"):
-            continue
-        pr = "0.9" if path in ("sluzby/", "cenik/", "sluzby/seo-optimalizace/") else "0.7"
-        rows.append(_mkurl(engine.BASE + "/cz/" + path, pr, _alts(path)))
+        seen.add(key)
+        pr = "0.5"
+        if dir_part == "" or dir_part == "cz/":
+            pr = "1.0"
+        elif dir_part in ("sk/sluzby/", "cz/sluzby/", "sk/cennik/", "cz/cenik/",
+                          "sk/sluzby/seo-optimalizacia/", "cz/sluzby/seo-optimalizace/",
+                          "sk/sluzby/seo-audit/"):
+            pr = "0.9"
+        elif dir_part.startswith("sk/blog/") or dir_part.startswith("cz/blog/"):
+            pr = "0.6"
+        alts = ""
+        if cz_sub is not None:
+            sk_u = engine.BASE + ("/" if sk_sub == "" else "/sk/" + sk_sub)
+            cz_u = engine.BASE + "/cz/" + cz_sub
+            xd = sk_u
+            alts = (f'<xhtml:link rel="alternate" hreflang="sk" href="{sk_u}"/>'
+                    f'<xhtml:link rel="alternate" hreflang="cs" href="{cz_u}"/>'
+                    f'<xhtml:link rel="alternate" hreflang="x-default" href="{xd}"/>')
+        rows.append(_mkurl(loc, pr, alts))
     xml = ('<?xml version="1.0" encoding="UTF-8"?>\n'
            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" '
            'xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'

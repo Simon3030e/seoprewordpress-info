@@ -216,6 +216,10 @@ def base(*, market: str, path: str, title: str, desc: str, canonical: str,
 {hreflang}
 {gsc_meta}<meta name="msvalidate.01" content="{BING_TOKEN}">
   <link rel="icon" href="{asset}assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="32x32" href="{asset}assets/img/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="{asset}assets/img/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="{asset}assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="{asset}assets/img/site.webmanifest">
   <link rel="stylesheet" href="{asset}assets/css/main.css">
   <link rel="stylesheet" href="{asset}assets/css/components.css">
   <link rel="stylesheet" href="{asset}assets/css/animations.css">
@@ -579,3 +583,19 @@ def results_slider(market: str, slides: list[dict] | None = None) -> str:
   </div>
 </section>
 """
+
+def article_schema(*, url: str, title: str, desc: str, date_iso: str,
+                   lang: str = "sk") -> str:
+    """BlogPosting JSON-LD for a blog post, referencing the Organization @id."""
+    lang_name = {"sk": "Šimon Štermenský", "cz": "Šimon Štermenský"}[lang]
+    return (
+        '<script type="application/ld+json">\n'
+        f'{{"@context":"https://schema.org","@type":"BlogPosting","@id":"{url}#article",'
+        f'"mainEntityOfPage":{{"@type":"WebPage","@id":"{url}"}},'
+        f'"headline":{_json_str(title)},"description":{_json_str(desc)},'
+        f'"datePublished":"{date_iso}","dateModified":"{date_iso}",'
+        f'"author":{{"@type":"Person","name":{_json_str(lang_name)},"url":"{BASE}/"}},'
+        f'"publisher":{{"@id":"{BASE}/#organization"}},'
+        f'"url":"{url}","image":"{BASE}/assets/img/og-cover.png","inLanguage":"{lang}"}}\n'
+        "</script>"
+    )
