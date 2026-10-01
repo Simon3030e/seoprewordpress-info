@@ -89,5 +89,5 @@ engine.LOGO = ('<span class="logo-n">S</span><span class="logo-o">E</span>'
 
 # ---------------------------------------------------------------- verify
 # Paste GSC html-tag token content after creating the property, rebuild, push.
-engine.GSC_TOKEN = ""
+engine.GSC_TOKEN = "2PKBQwBfGag6Npm5WcINEAG453XLuW3TNPhRmdzC1EM"
 engine.BING_TOKEN = "3b43ea1af0ee49f082ab3c4e94ed5f4f"
