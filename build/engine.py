@@ -274,7 +274,7 @@ def footer(market: str, prefix: str) -> str:
              (_market_url(market, "blog/"), "Blog"),
              (_market_url(market, "kontakt/"), "Kontaktný formulár" if market == "sk" else "Kontaktní formulář")])
     col3 = ("Sesterské weby",
-            [(MAIN_SITE + "/", "Nokto Studio: hlavný web"),
+            [(MAIN_SITE + "/", "Nokto Studio: hlavný web" if market == "sk" else "Nokto Studio: hlavní web"),
              ("https://seoprewordpress.info/", "SEO pre WordPress"),
              ("https://seopreeshopy.pro/", "SEO pre e-shopy"),
              ("https://seoaudit.blog/", "SEO audit")])
