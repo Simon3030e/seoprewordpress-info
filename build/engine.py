@@ -450,16 +450,16 @@ def roi_band(market: str, niche: str = "") -> str:
     if market == "sk":
         title = "Predstava návratnosti: čo z toho môže mať váš web"
         rows = [
-            ("120 EUR", "mesačne (10 hodín)", "Malý web: 5 až 10 nových zákazníkov mesačne z Google = návratnosť už pri jednej objednávke."),
-            ("144 EUR", "mesačne (12 hodín)", "Web s obsahom: každý nový článok je dlhodobý zdroj zákazníkov, nie jednorazová reklama."),
-            ("180 EUR", "mesačne (15 hodín)", "E-shop alebo blog: obsah, ktorý pracuje mesiace po zverejnení, bez platenej reklamy."),
+            ("180 EUR", "mesačne (5 hodín)", "Základný balík: 5 h práce špecialistu (60 EUR) + nástroje a AI (120 EUR). Menší WordPress web a lokálne dopyty."),
+            ("220 EUR", "mesačne (10 hodín)", "Rastový balík: 10 h práce špecialistu (120 EUR) + nástroje a AI (100 EUR). Stabilný rast a obsahový marketing."),
+            ("290 EUR", "mesačne (15 hodín)", "Pro balík: 15 h práce špecialistu (180 EUR) + nástroje a AI (110 EUR). WooCommerce, technické SEO a linkbuilding."),
         ]
     else:
         title = "Představa návratnosti investice do SEO"
         rows = [
-            ("120 EUR", "měsíčně (10 hodin)", "Malý web: 5 až 10 nových zákazníků měsíčně z Google = návratnost už při jedné objednávce."),
-            ("144 EUR", "měsíčně (12 hodin)", "Web s obsahem: každý článek je dlouhodobý zdroj zákazníků, ne jednorázová reklama."),
-            ("180 EUR", "měsíčně (15 hodin)", "E-shop nebo blog: obsah, který pracuje měsíce po zveřejnění, bez placené reklamy."),
+            ("180 EUR", "měsíčně (5 hodin)", "Základní balíček: 5 h práce specialisty (60 EUR) + nástroje a AI (120 EUR). Menší WordPress web a lokální dotazy."),
+            ("220 EUR", "měsíčně (10 hodin)", "Růstový balíček: 10 h práce specialisty (120 EUR) + nástroje a AI (100 EUR). Stabilní růst a obsahový marketing."),
+            ("290 EUR", "měsíčně (15 hodin)", "Pro balíček: 15 h práce specialisty (180 EUR) + nástroje a AI (110 EUR). WooCommerce, technické SEO a linkbuilding."),
         ]
     cells = "".join(
         f'<div class="benefit-card card-hover reveal" data-delay="{(i + 1) * 100}" style="background:rgba(255,255,255,0.08); border:none;">'
