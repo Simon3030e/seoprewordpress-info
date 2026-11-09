@@ -555,6 +555,25 @@ def _donut(parts: list[tuple[int, str, str]], w: int = 160, h: int = 160) -> str
     return f'<svg viewBox="0 0 {w} {h}" width="{w}" height="{h}" role="img" aria-hidden="true" style="width:{w}px;height:{h}px;display:block;margin:0 auto;">{"".join(out)}</svg>'
 
 
+def _screenshot_chart(gsc_img: str, ai_img: str, client_lbl: str, market: str) -> str:
+    """Two-column screenshot comparison: Google Search Console + AI Visibility."""
+    lbl_gsc = {"sk": "Google Vyhľadávanie (Search Console)",
+               "cz": "Google Vyhledávání (Search Console)"}[market]
+    lbl_ai = {"sk": "AI Viditeľnosť (Google AI funkcie)",
+              "cz": "AI Viditelnost (Google AI funkce)"}[market]
+    return f"""
+<div class="rs-shot-grid">
+  <div class="rs-shot-box">
+    <div class="rs-shot-label"><span class="dot dot-blue"></span> {lbl_gsc}</div>
+    <img src="/assets/img/results/{gsc_img}" alt="{lbl_gsc}: {client_lbl}" loading="lazy" class="rs-shot-img">
+  </div>
+  <div class="rs-shot-box">
+    <div class="rs-shot-label"><span class="dot dot-violet"></span> {lbl_ai}</div>
+    <img src="/assets/img/results/{ai_img}" alt="{lbl_ai}: {client_lbl}" loading="lazy" class="rs-shot-img">
+  </div>
+</div>"""
+
+
 def _slide(client: str, chip: str, period: str, nums: list[dict], chart: str,
            caption: str, market: str, logo: str | None = None) -> str:
     logo_html = ""
@@ -564,6 +583,9 @@ def _slide(client: str, chip: str, period: str, nums: list[dict], chart: str,
         f'<div class="rs-num"><strong style="color:{n["color"]};">{n["big"]}</strong><span>{n["label"]}</span></div>'
         for n in nums)
     chip_html = f'<span class="rs-chip">{chip}</span>' if chip and not logo else ""
+    chart_html = chart if "rs-shot-grid" in chart else f'<div class="rs-chart">{chart}</div>'
+    src_text = {"sk": "Zdroj: Google Search Console a AI prehľady",
+                "cz": "Zdroj: Google Search Console a AI přehledy"}[market]
     return f"""
 <div class="rs-slide">
   <div class="rs-card">
@@ -571,31 +593,37 @@ def _slide(client: str, chip: str, period: str, nums: list[dict], chart: str,
       <div><h3>{client}</h3><span class="rs-period">{period}</span></div>
       {chip_html}{logo_html}
     </div>
-    <div class="rs-chart">{chart}</div>
+    {chart_html}
     <div class="rs-nums">{nums_html}</div>
     <p class="rs-caption">{caption}</p>
-    <p class="rs-source">Zdroj: Google Search Console</p>
+    <p class="rs-source">{src_text}</p>
   </div>
 </div>"""
 
 
 def results_slider(market: str, slides: list[dict] | None = None) -> str:
     """Slider of real client results. Pass niche-specific slides or get the
-    default noktostudio set."""
+    default set."""
     t = {
-        "sk": {"label": "Moje výsledky", "head": "Čísla z praxe, nie obrázky zo šablóny",
-               "sub": "Skutočné ukážky z Google Search Console a Google AI Mode mojich projektov a klientov. Čísla vám pred spoluprácou ukážem naživo.",
+        "sk": {"label": "Overené výsledky klientov", "head": "Google Vyhľadávanie aj AI viditeľnosť v praxi",
+               "sub": "Skutočné screenshoty z Google Search Console a AI prehľadov našich klientov. Overené čísla z praxe, žiadne vymyslené makety.",
                "prev": "Predchádzajúci", "next": "Nasledujúci", "all": "Všetky výsledky", "case_url": "/sk/vysledky/"},
-        "cz": {"label": "Moje výsledky", "head": "Čísla z praxe, ne obrázky ze šablony",
-               "sub": "Skutečné ukázky z Google Search Console a Google AI Mode mých projektů a klientů. Čísla vám před spoluprací ukážu naživo.",
+        "cz": {"label": "Ověřená data klientů", "head": "Google Vyhledávání i AI viditelnost v praxi",
+               "sub": "Skutečné screenshoty z Google Search Console a AI přehledů našich klientů. Ověřená čísla z praxe, žádné vymyšlené makety.",
                "prev": "Předchozí", "next": "Další", "all": "Všechny výsledky", "case_url": "/cz/vysledky/"},
     }[market]
     if not slides:
         return ""
     built = []
     for s in slides:
-        built.append(_slide(s["client"], s.get("chip", ""), s["period"], s["nums"], s["chart"],
-                            s["caption"], market, logo=s.get("logo")))
+        c_title = s["client"][market] if isinstance(s["client"], dict) else s["client"]
+        c_chip = s["chip"][market] if isinstance(s.get("chip"), dict) else s.get("chip", "")
+        c_period = s["period"][market] if isinstance(s.get("period"), dict) else s.get("period", "")
+        c_nums = s["nums"][market] if isinstance(s.get("nums"), dict) else s["nums"]
+        c_chart = s["chart"](market) if callable(s.get("chart")) else s.get("chart", "")
+        c_caption = s["caption"][market] if isinstance(s.get("caption"), dict) else s.get("caption", "")
+        built.append(_slide(c_title, c_chip, c_period, c_nums, c_chart,
+                            c_caption, market, logo=s.get("logo")))
     dots = '<span class="rs-dot active" data-i="0"></span>' + \
            "".join(f'<span class="rs-dot" data-i="{i}"></span>' for i in range(1, len(slides)))
     return f"""

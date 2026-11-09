@@ -7,7 +7,7 @@ wordpress seo 360, seo optimalizacia wordpress 130, seo blog wordpress 120,
 wordpress seo plugin 40, seo optimalizacia navod 1200, seo optimalizacia cena 620.
 """
 
-from engine import _VIOLET, _ORANGE, _CERULEAN, _VIOLET_L, _sparkline, _bars
+from engine import _VIOLET, _ORANGE, _CERULEAN, _VIOLET_L, _sparkline, _bars, _screenshot_chart
 
 # ---------------------------------------------------------------- services
 # (sk_path, cz_path, SK label, CZ label)
@@ -36,20 +36,116 @@ SERVICE_DEFS_COLOR = ["#6A3FC4", "#F75940", "#1DACD6", "#6A3FC4"]
 SERVICE_DEFS_TAG = ["tag-violet", "tag-orange", "tag-cerulean", "tag-violet-light"]
 
 SLIDES = [
-    {"client": "WordPress web (klient)", "chip": "Obsah + technika",
-     "period": "posledných 28 dní",
-     "nums": [{"big": "121", "color": _VIOLET, "label": "klikov z Google (+49 %)"},
-              {"big": "4 390", "color": _ORANGE, "label": "zobrazení v Google (+43 %)"},
-              {"big": "+142 %", "color": _VIOLET_L, "label": "rast hlavnej stránky"}],
-     "chart": _sparkline([40, 55, 48, 62, 58, 75, 70, 88, 95, 92, 110, 121], _VIOLET),
-     "caption": "Prvý mesiac spolupráce na WordPress webe: technické SEO a obsah. Google začal prinášať zákazníkov hneď."},
-    {"client": "Blog na WordPress (klient)", "chip": "Obsah na 6 stránkach",
-     "period": "28 dní + posledný týždeň",
-     "nums": [{"big": "11 000", "color": _CERULEAN, "label": "zobrazení mesačne (+14 %)"},
-              {"big": "+43 %", "color": _VIOLET, "label": "klikov posledný týždeň"},
-              {"big": "6", "color": _ORANGE, "label": "stránok, na ktorých sa to stalo"}],
-     "chart": _sparkline([30, 38, 42, 50, 55, 62, 66, 72, 78, 84, 92, 102], _CERULEAN),
-     "caption": "Pridané obsahové stránky na reálne dopyty zákazníkov. Len 6 stránok z celého WordPress webu posunulo celý web."},
+    {
+        "client": {"sk": "WordPress portál a e-shop", "cz": "WordPress portál a e-shop"},
+        "chip": {"sk": "Obsah + AI viditeľnosť", "cz": "Obsah + AI viditelnost"},
+        "period": {"sk": "12 mesiacov v Google Vyhľadávaní · 6 mesiacov v AI", "cz": "12 měsíců v Google Vyhledávání · 6 měsíců v AI"},
+        "nums": {
+            "sk": [
+                {"big": "174 tis.", "color": _VIOLET, "label": "zobrazení v Google za 12 mesiacov"},
+                {"big": "2 010", "color": _CERULEAN, "label": "klikov z organického Google"},
+                {"big": "2 400", "color": _ORANGE, "label": "zobrazení v generatívnej AI"},
+            ],
+            "cz": [
+                {"big": "174 tis.", "color": _VIOLET, "label": "zobrazení v Google za 12 měsíců"},
+                {"big": "2 010", "color": _CERULEAN, "label": "kliků z organického Google"},
+                {"big": "2 400", "color": _ORANGE, "label": "zobrazení v generativní AI"},
+            ],
+        },
+        "chart": lambda m: _screenshot_chart("client1-gsc-search.png", "client1-ai-overview.png", "WordPress portál a e-shop", m),
+        "caption": {
+            "sk": "Dlhodobý rast organického vyhľadávania na WordPress po nasadení nového obsahu a optimalizácii architektúry. Google prináša tisíce návštevníkov a generatívna AI cituje web v 2 400 zobrazeniach.",
+            "cz": "Dlouhodobý růst organického vyhledávání na WordPress po nasazení nového obsahu a optimalizaci architektury. Google přináší tisíce návštěvníků a generativní AI cituje web v 2 400 zobrazeních.",
+        },
+    },
+    {
+        "client": {"sk": "B2B WordPress web a služby", "cz": "B2B WordPress web a služby"},
+        "chip": {"sk": "Rast za 2 mesiace", "cz": "Růst za 2 měsíce"},
+        "period": {"sk": "September až november 2026", "cz": "Září až listopad 2026"},
+        "nums": {
+            "sk": [
+                {"big": "8 750", "color": _VIOLET, "label": "zobrazení za 2 mesiace"},
+                {"big": "339", "color": _CERULEAN, "label": "klikov z Google (CTR 3,9 %)"},
+                {"big": "528", "color": _ORANGE, "label": "zobrazení v AI po zlomovom bode"},
+            ],
+            "cz": [
+                {"big": "8 750", "color": _VIOLET, "label": "zobrazení za 2 měsíce"},
+                {"big": "339", "color": _CERULEAN, "label": "kliků z Google (CTR 3,9 %)"},
+                {"big": "528", "color": _ORANGE, "label": "zobrazení v AI po zlomovém bodě"},
+            ],
+        },
+        "chart": lambda m: _screenshot_chart("client2-gsc-search.png", "client2-ai-overview.png", "B2B WordPress web a služby", m),
+        "caption": {
+            "sk": "Nábeh po nasadení optimalizácie vstupných stránok služieb vo WordPress. Koncom októbra prišiel zlom, indexované dopyty vyleteli a web začal nabiehať aj v AI prehľadoch (takmer 40 zobrazení denne).",
+            "cz": "Náběh po nasazení optimalizace vstupních stránek služeb ve WordPress. Koncem října přišel zlom, indexované dotazy vyletěly a web začal nabíhat i v AI přehledech (téměř 40 zobrazení denně).",
+        },
+    },
+    {
+        "client": {"sk": "Nový WordPress projekt (štart od nuly)", "cz": "Nový WordPress projekt (start od nuly)"},
+        "chip": {"sk": "Nový web od nuly", "cz": "Nový web od nuly"},
+        "period": {"sk": "Posledné 3 mesiace (od augusta 2026)", "cz": "Poslední 3 měsíce (od srpna 2026)"},
+        "nums": {
+            "sk": [
+                {"big": "718", "color": _VIOLET, "label": "zobrazení v Google od spustenia"},
+                {"big": "8,2", "color": _CERULEAN, "label": "priemerná pozícia v Google"},
+                {"big": "306", "color": _ORANGE, "label": "zobrazení v AI za 1 mesiac"},
+            ],
+            "cz": [
+                {"big": "718", "color": _VIOLET, "label": "zobrazení v Google od spuštění"},
+                {"big": "8,2", "color": _CERULEAN, "label": "průměrná pozice v Google"},
+                {"big": "306", "color": _ORANGE, "label": "zobrazení v AI za 1 měsíc"},
+            ],
+        },
+        "chart": lambda m: _screenshot_chart("client3-gsc-search.png", "client3-ai-overview.png", "Nový WordPress projekt", m),
+        "caption": {
+            "sk": "Nový WordPress web s nulovou históriou. V auguste a septembri nulová viditeľnosť, začiatkom októbra po publikovaní prvých článkov prišiel okamžitý nástup do Google a vrchol 28 zobrazení denne v AI.",
+            "cz": "Nový WordPress web s nulovou historií. V srpnu a září nulová viditelnost, začátkem října po publikování prvních článků přišel okamžitý nástup do Google a vrchol 28 zobrazení denně v AI.",
+        },
+    },
+    {
+        "client": {"sk": "Líder segmentu (veľký WP projekt)", "cz": "Lídr segmentu (velký WP projekt)"},
+        "chip": {"sk": "Veľký objem + AI líder", "cz": "Velký objem + AI lídr"},
+        "period": {"sk": "Týždenné sledovanie výkonnosti", "cz": "Týdenní sledování výkonnosti"},
+        "nums": {
+            "sk": [
+                {"big": "246 tis.", "color": _VIOLET, "label": "týždenných zobrazení v Google"},
+                {"big": "3 220", "color": _CERULEAN, "label": "klikov týždenne z vyhľadávania"},
+                {"big": "50 tis.", "color": _ORANGE, "label": "zobrazení v generatívnej AI"},
+            ],
+            "cz": [
+                {"big": "246 tis.", "color": _VIOLET, "label": "týdenních zobrazení v Google"},
+                {"big": "3 220", "color": _CERULEAN, "label": "kliků týdně z vyhledávání"},
+                {"big": "50 tis.", "color": _ORANGE, "label": "zobrazení v generativní AI"},
+            ],
+        },
+        "chart": lambda m: _screenshot_chart("client4-gsc-search.png", "client4-ai-overview.png", "Veľký WP projekt", m),
+        "caption": {
+            "sk": "Masívny organický zásah WordPress portálu s priemernou pozíciou 6,6. Google Search Console hlási vyše 50 000 zobrazení vo funkciách generatívnej umelej inteligencie s dennými špičkami cez 1 000 zobrazení.",
+            "cz": "Masivní organický zásah WordPress portálu s průměrnou pozicí 6,6. Google Search Console hlásí přes 50 000 zobrazení ve funkcích generativní umělé inteligence s denními špičkami přes 1 000 zobrazení.",
+        },
+    },
+    {
+        "client": {"sk": "Rastúci WordPress web (týždenný posun)", "cz": "Rostoucí WordPress web (týdenní posun)"},
+        "chip": {"sk": "Týždenný rast", "cz": "Týdenní růst"},
+        "period": {"sk": "August až november 2026 (Weekly)", "cz": "Srpen až listopad 2026 (Weekly)"},
+        "nums": {
+            "sk": [
+                {"big": "6 190", "color": _VIOLET, "label": "zobrazení za týždeň"},
+                {"big": "155", "color": _CERULEAN, "label": "klikov za týždeň (CTR 2,5 %)"},
+                {"big": "409", "color": _ORANGE, "label": "týždenných zobrazení v AI"},
+            ],
+            "cz": [
+                {"big": "6 190", "color": _VIOLET, "label": "zobrazení za týden"},
+                {"big": "155", "color": _CERULEAN, "label": "kliků za týden (CTR 2,5 %)"},
+                {"big": "409", "color": _ORANGE, "label": "týdenních zobrazení v AI"},
+            ],
+        },
+        "chart": lambda m: _screenshot_chart("client5-gsc-search.png", "client5-ai-overview.png", "Rastúci WordPress web", m),
+        "caption": {
+            "sk": "Týždenný prehľad stabilného rastu WordPress webu. Krivka kliknutí narástla z počiatočných 6 na viac než 20 za týždeň, zatiaľ čo fialová linka AI viditeľnosti stúpa z 20 na 60 zobrazení za týždeň.",
+            "cz": "Týdenní přehled stabilního růstu WordPress webu. Křivka kliknutí narostla z počátečních 6 na více než 20 za týden, zatímco fialová linka AI viditelnosti stoupá z 20 na 60 zobrazení za týden.",
+        },
+    },
 ]
 
 PROCESS = {
